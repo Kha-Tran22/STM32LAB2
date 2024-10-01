@@ -1,11 +1,11 @@
 /*
- * exercise1.c
+ * exercise2.c
  *
  *  Created on: Oct 1, 2024
  *      Author: tuank
  */
 
-#include "exercise1.h"
+#include "exercise2.h"
 
 char seg[10] =
 {
@@ -23,7 +23,7 @@ char seg[10] =
 
 void clearAll()
 {
-	HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin, SET);
+	HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN2_Pin | EN3_Pin, SET);
 	HAL_GPIO_WritePin(GPIOB, SEG0_Pin | SEG1_Pin | SEG2_Pin | SEG3_Pin | SEG4_Pin | SEG5_Pin | SEG6_Pin, SET);
 }
 
@@ -33,6 +33,10 @@ void enablePin(int index)
 		HAL_GPIO_WritePin(GPIOA, EN0_Pin, RESET);
 	if (index == 1)
 		HAL_GPIO_WritePin(GPIOA, EN1_Pin, RESET);
+	if (index == 2)
+		HAL_GPIO_WritePin(GPIOA, EN2_Pin, RESET);
+	if (index == 3)
+		HAL_GPIO_WritePin(GPIOA, EN3_Pin, RESET);
 
 }
 

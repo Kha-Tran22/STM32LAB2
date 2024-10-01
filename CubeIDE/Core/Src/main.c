@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "exercise1.h"
+#include "exercise2.h"
 #include "software_timer.h"
 /* USER CODE END Includes */
 
@@ -97,38 +97,52 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int status = LED1;
   clearAll();
-  setTimer(0, 500);
-  setTimer(1, 1000);
+  setTimer(0, 1000);
+  setTimer(1, 500);
   timer_flag[1] = 1;
   while (1)
   {
 	if (timer_flag[0] == 1)
 	{
 		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		setTimer(0, 500);
+		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+		setTimer(0, 1000);
 	}
 
 	if (timer_flag[1] == 1)
 	{
+		clearAll();
 		switch (status)
 		{
 			case LED1:
-				clearAll();
 				enablePin(0);
 				displayNumber(1);
 				status = LED2;
 				break;
+
 			case LED2:
-				clearAll();
 				enablePin(1);
 				displayNumber(2);
+				status = LED3;
+				break;
+
+			case LED3:
+				enablePin(2);
+				displayNumber(3);
+				status = LED4;
+				break;
+
+			case LED4:
+				enablePin(3);
+				displayNumber(0);
 				status = LED1;
 				break;
+
 			default:
 				break;
 
 		}
-		setTimer(1, 1000);
+		setTimer(1, 500);
 	}
 
     /* USER CODE END WHILE */

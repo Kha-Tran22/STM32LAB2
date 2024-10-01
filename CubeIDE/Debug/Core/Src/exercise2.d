@@ -1,4 +1,4 @@
-Core/Src/exercise1.o: ../Core/Src/exercise1.c ../Core/Inc/exercise1.h \
+Core/Src/exercise2.o: ../Core/Src/exercise2.c ../Core/Inc/exercise2.h \
  ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -24,7 +24,7 @@ Core/Src/exercise1.o: ../Core/Src/exercise1.c ../Core/Inc/exercise1.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 
-../Core/Inc/exercise1.h:
+../Core/Inc/exercise2.h:
 
 ../Core/Inc/main.h:
 
