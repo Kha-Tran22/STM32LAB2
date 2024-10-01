@@ -97,15 +97,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int status = LED1;
   clearAll();
-  setTimer(0, 500);
-  setTimer(1, 1000);
+  setTimer(0, 1000);
+  setTimer(1, 500);
   timer_flag[1] = 1;
   while (1)
   {
 	if (timer_flag[0] == 1)
 	{
 		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		setTimer(0, 500);
+		setTimer(0, 1000);
 	}
 
 	if (timer_flag[1] == 1)
@@ -128,7 +128,7 @@ int main(void)
 				break;
 
 		}
-		setTimer(1, 1000);
+		setTimer(1, 500);
 	}
 
     /* USER CODE END WHILE */
