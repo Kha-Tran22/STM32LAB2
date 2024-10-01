@@ -7,10 +7,6 @@
 
 #include "exercise1.h"
 
-
-int timer_flag[10] = {0};
-int timer_counter[10] = {0};
-
 char seg[10] =
 {
 		0x40,
@@ -42,35 +38,13 @@ void enablePin(int index)
 
 void displayNumber(int number)
 {
-	HAL_GPIO_WritePin(GPIOB, SEG0_Pin, (seg[number] & 0x01) ? SET : RESET );
-	HAL_GPIO_WritePin(GPIOB, SEG1_Pin, (seg[number] & 0x02) ? SET : RESET );
-	HAL_GPIO_WritePin(GPIOB, SEG2_Pin, (seg[number] & 0x04) ? SET : RESET );
-	HAL_GPIO_WritePin(GPIOB, SEG3_Pin, (seg[number] & 0x08) ? SET : RESET );
-	HAL_GPIO_WritePin(GPIOB, SEG4_Pin, (seg[number] & 0x10) ? SET : RESET );
-	HAL_GPIO_WritePin(GPIOB, SEG5_Pin, (seg[number] & 0x20) ? SET : RESET );
-	HAL_GPIO_WritePin(GPIOB, SEG6_Pin, (seg[number] & 0x40) ? SET : RESET );
-}
-
-
-void setTimer(int index, int duration)
-{
-	timer_counter[index] = duration / TICK;
-	timer_flag[index] = 0;
-}
-
-void timerRun()
-{
-	for (int i = 0; i < 2; i++)
-	{
-		if (timer_counter[i] >= 0)
-		{
-			timer_counter[i]--;
-			if (timer_counter[i] <= 0)
-			{
-				timer_flag[i] = 1;
-			}
-		}
-	}
+	HAL_GPIO_WritePin(GPIOB, SEG0_Pin, (seg[number] & 0x01) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOB, SEG1_Pin, (seg[number] & 0x02) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOB, SEG2_Pin, (seg[number] & 0x04) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOB, SEG3_Pin, (seg[number] & 0x08) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOB, SEG4_Pin, (seg[number] & 0x10) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOB, SEG5_Pin, (seg[number] & 0x20) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOB, SEG6_Pin, (seg[number] & 0x40) ? SET : RESET);
 }
 
 
