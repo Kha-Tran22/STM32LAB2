@@ -21,6 +21,5 @@ void timerRun();
 void clearAll();
 void enablePin(int index);
 void displayNumber(int number);
-void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim);
 
 #endif /* INC_EXERCISE1_H_ */

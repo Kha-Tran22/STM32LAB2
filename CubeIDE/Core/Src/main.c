@@ -89,14 +89,16 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim2);
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int status = LED1;
+  clearAll();
   setTimer(0, 500);
   setTimer(1, 1000);
+  timer_flag[1] = 1;
   while (1)
   {
 	if (timer_flag[0] == 1)
@@ -127,6 +129,7 @@ int main(void)
 		}
 		setTimer(1, 1000);
 	}
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -253,7 +256,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim)
+void HAL_TIM_PeriodElapsedCallback( TIM_HandleTypeDef * htim)
 {
 	timerRun();
 }
