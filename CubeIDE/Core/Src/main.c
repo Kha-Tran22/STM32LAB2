@@ -22,8 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "exercise2.h"
 #include "software_timer.h"
+#include "exercise3.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,7 +95,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int status = LED1;
+  int index_led = 0;
   clearAll();
   setTimer(0, 1000);
   setTimer(1, 500);
@@ -111,39 +111,14 @@ int main(void)
 
 	if (timer_flag[1] == 1)
 	{
-		clearAll();
-		switch (status)
-		{
-			case LED1:
-				enablePin(0);
-				displayNumber(1);
-				status = LED2;
-				break;
-
-			case LED2:
-				enablePin(1);
-				displayNumber(2);
-				status = LED3;
-				break;
-
-			case LED3:
-				enablePin(2);
-				displayNumber(3);
-				status = LED4;
-				break;
-
-			case LED4:
-				enablePin(3);
-				displayNumber(0);
-				status = LED1;
-				break;
-
-			default:
-				break;
-
-		}
+		update7SEG(index_led);
+		index_led++;
+		if (index_led >= 4)
+			index_led = 0;
 		setTimer(1, 500);
 	}
+
+
 
     /* USER CODE END WHILE */
 
