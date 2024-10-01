@@ -1,0 +1,5 @@
+exercise1.c:28:6:clearAll	8	static
+exercise1.c:34:6:enablePin	16	static
+exercise1.c:43:6:displayNumber	16	static
+exercise1.c:55:6:setTimer	16	static
+exercise1.c:61:6:timerRun	16	static
