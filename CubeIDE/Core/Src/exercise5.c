@@ -5,7 +5,7 @@
  *      Author: tuank
  */
 
-#include <exercise3.h>
+#include <exercise5.h>
 
 char seg[10] =
 {
