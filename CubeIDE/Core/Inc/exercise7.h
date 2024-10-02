@@ -1,12 +1,12 @@
 /*
- * exercise5.h
+ * exercise7.h
  *
  *  Created on: Oct 1, 2024
  *      Author: tuank
  */
 
-#ifndef INC_EXERCISE5_H_
-#define INC_EXERCISE5_H_
+#ifndef INC_EXERCISE7_H_
+#define INC_EXERCISE7_H_
 
 #include "main.h"
 
@@ -18,4 +18,4 @@ void displayNumber(int number);
 void update7SEG(int index);
 void updateClockBuffer();
 
-#endif /* INC_EXERCISE5_H_ */
+#endif /* INC_EXERCISE7_H_ */
