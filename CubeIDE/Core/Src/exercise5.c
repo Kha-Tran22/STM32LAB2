@@ -1,11 +1,11 @@
 /*
- * exercise3.c
+ * exercise5.c
  *
  *  Created on: Oct 1, 2024
  *      Author: tuank
  */
 
-#include <exercise5.h>
+#include "exercise5.h"
 
 char seg[10] =
 {
@@ -86,6 +86,13 @@ void update7SEG(int index)
 	}
 }
 
+void updateClockBuffer()
+{
+	led_buffer[0] = hour / 10;
+	led_buffer[1] = hour % 10;
+	led_buffer[2] = minute / 10;
+	led_buffer[3] = minute % 10;
+}
 
 
 

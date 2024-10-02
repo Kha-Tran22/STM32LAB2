@@ -18,12 +18,13 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <exercise5.h>
+
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
+#include "exercise5.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,10 +97,15 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int index_led = 0;
+  hour = 15; minute = 8; second = 50;
+
   clearAll();
   setTimer(0, 1000);
-  setTimer(1, 500);
+  setTimer(1, 250);
+  setTimer(2, 1000);
+
   timer_flag[1] = 1;
+  timer_flag[2] = 1;
   while (1)
   {
 	if (timer_flag[0] == 1)
@@ -115,7 +121,26 @@ int main(void)
 		index_led++;
 		if (index_led >= 4)
 			index_led = 0;
-		setTimer(1, 500);
+		setTimer(1, 250);
+	}
+
+	if (timer_flag[2] == 1)
+	{
+		second++;
+		if (second >= 60)
+		{
+			second = 0;
+			minute++;
+		}
+		if( minute >= 60) {
+			minute = 0;
+			hour ++;
+		}
+		if( hour >= 24){
+			hour = 0;
+		}
+		updateClockBuffer();
+		setTimer(2, 1000);
 	}
 
 
