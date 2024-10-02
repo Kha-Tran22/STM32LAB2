@@ -18,12 +18,13 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
-#include "exercise3.h"
+#include "exercise4.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,7 +99,7 @@ int main(void)
   int index_led = 0;
   clearAll();
   setTimer(0, 1000);
-  setTimer(1, 500);
+  setTimer(1, 250);
   timer_flag[1] = 1;
   while (1)
   {
@@ -115,7 +116,7 @@ int main(void)
 		index_led++;
 		if (index_led >= 4)
 			index_led = 0;
-		setTimer(1, 500);
+		setTimer(1, 250);
 	}
 
 

@@ -1,11 +1,11 @@
 /*
- * exercise3.c
+ * exercise4.c
  *
  *  Created on: Oct 1, 2024
  *      Author: tuank
  */
 
-#include <exercise3.h>
+#include "exercise4.h"
 
 char seg[10] =
 {

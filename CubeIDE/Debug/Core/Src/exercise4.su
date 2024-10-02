@@ -1,0 +1,4 @@
+exercise4.c:24:6:clearAll	8	static
+exercise4.c:30:6:enablePin	16	static
+exercise4.c:43:6:displayNumber	16	static
+exercise4.c:58:6:update7SEG	16	static
