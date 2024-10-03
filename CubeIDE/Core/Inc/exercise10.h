@@ -20,6 +20,6 @@ void updateClockBuffer();
 
 void displayCol(int index);
 void clearMatrix();
-void updateLEDMatrix(int index);
+void updateLEDMatrix(int index, int shift);
 
 #endif /* INC_EXERCISE10_H_ */

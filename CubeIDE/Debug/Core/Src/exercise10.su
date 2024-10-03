@@ -1,0 +1,9 @@
+exercise10.c:24:6:clearAll	8	static
+exercise10.c:30:6:enablePin	16	static
+exercise10.c:43:6:displayNumber	16	static
+exercise10.c:58:6:update7SEG	16	static
+exercise10.c:89:6:updateClockBuffer	4	static
+exercise10.c:108:6:displayCol	16	static
+exercise10.c:120:6:clearMatrix	8	static
+exercise10.c:124:6:shiftBuffer	24	static
+exercise10.c:134:6:updateLEDMatrix	16	static

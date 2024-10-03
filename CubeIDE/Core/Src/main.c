@@ -97,6 +97,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int index_led = 0;
   int index_led_matrix = 0;
+  int shift = 1;
   hour = 15; minute = 8; second = 50;
 
   clearAll();
@@ -107,6 +108,7 @@ int main(void)
 
   timer_flag[1] = 1;
   timer_flag[2] = 1;
+  timer_flag[3] = 1;
   while (1)
   {
 	if (timer_flag[0] == 1)
@@ -145,9 +147,10 @@ int main(void)
 	}
 	if (timer_flag[3] == 1)
 	{
-		updateLEDMatrix(index_led_matrix++);
-				if (index_led_matrix >= 8)
-					index_led_matrix = 0;
+		updateLEDMatrix(index_led_matrix, shift);
+		index_led_matrix++;
+		if (index_led_matrix >= 9)
+			index_led_matrix = 0;
 		setTimer(3, 10);
 	}
 
