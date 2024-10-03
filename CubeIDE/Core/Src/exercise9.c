@@ -107,14 +107,14 @@ uint8_t matrix_buffer[8] =
 
 void displayCol(int index)
 {
-	HAL_GPIO_WritePin(GPIOA, ENM0_Pin, (matrix_buffer[index] & 0x01) ? RESET : SET);
-	HAL_GPIO_WritePin(GPIOA, ENM1_Pin, (matrix_buffer[index] & 0x02) ? RESET : SET);
-	HAL_GPIO_WritePin(GPIOA, ENM2_Pin, (matrix_buffer[index] & 0x04) ? RESET : SET);
-	HAL_GPIO_WritePin(GPIOA, ENM3_Pin, (matrix_buffer[index] & 0x08) ? RESET : SET);
-	HAL_GPIO_WritePin(GPIOA, ENM4_Pin, (matrix_buffer[index] & 0x10) ? RESET : SET);
-	HAL_GPIO_WritePin(GPIOA, ENM5_Pin, (matrix_buffer[index] & 0x20) ? RESET : SET);
-	HAL_GPIO_WritePin(GPIOA, ENM6_Pin, (matrix_buffer[index] & 0x40) ? RESET : SET);
-	HAL_GPIO_WritePin(GPIOA, ENM7_Pin, (matrix_buffer[index] & 0x80) ? RESET : SET);
+	HAL_GPIO_WritePin(GPIOA, ENM0_Pin, (matrix_buffer[index] & 0x01) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOA, ENM1_Pin, (matrix_buffer[index] & 0x02) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOA, ENM2_Pin, (matrix_buffer[index] & 0x04) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOA, ENM3_Pin, (matrix_buffer[index] & 0x08) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOA, ENM4_Pin, (matrix_buffer[index] & 0x10) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOA, ENM5_Pin, (matrix_buffer[index] & 0x20) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOA, ENM6_Pin, (matrix_buffer[index] & 0x40) ? SET : RESET);
+	HAL_GPIO_WritePin(GPIOA, ENM7_Pin, (matrix_buffer[index] & 0x80) ? SET : RESET);
 }
 
 void clearMatrix(){
@@ -128,35 +128,35 @@ void updateLEDMatrix(int index)
 	{
 		case 0:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW0_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM0_Pin, RESET);
 			break;
 		case 1:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW1_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM1_Pin, RESET);
 			break;
 		case 2:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW2_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM2_Pin, RESET);
 			break;
 		case 3:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW3_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM3_Pin, RESET);
 			break;
 		case 4:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW4_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM4_Pin, RESET);
 			break;
 		case 5:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW5_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM5_Pin, RESET);
 			break;
 		case 6:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW6_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM6_Pin, RESET);
 			break;
 		case 7:
 			displayCol(index);
-			HAL_GPIO_WritePin(GPIOB, ROW7_Pin, RESET);
+			HAL_GPIO_WritePin(GPIOA, ENM7_Pin, RESET);
 			break;
 		default:
 			break;

@@ -103,11 +103,9 @@ int main(void)
   setTimer(0, 1000);
   setTimer(1, 250);
   setTimer(2, 1000);
-  setTimer(3, 50);
 
   timer_flag[1] = 1;
   timer_flag[2] = 1;
-  timer_flag[3] = 1;
   while (1)
   {
 	if (timer_flag[0] == 1)
@@ -119,9 +117,16 @@ int main(void)
 
 	if (timer_flag[1] == 1)
 	{
-		update7SEG(index_led++);
+		update7SEG(index_led);
+		index_led++;
 		if (index_led >= 4)
 			index_led = 0;
+
+		updateLEDMatrix(index_led_matrix);
+		if (index_led_matrix >= 8)
+			index_led_matrix = 0;
+
+
 		setTimer(1, 250);
 	}
 
@@ -142,14 +147,6 @@ int main(void)
 		}
 		updateClockBuffer();
 		setTimer(2, 1000);
-	}
-
-	if (timer_flag[3] == 1)
-	{
-		updateLEDMatrix(index_led_matrix++);
-		if (index_led_matrix >= 8)
-			index_led_matrix = 0;
-		setTimer(3, 50);
 	}
 
 
