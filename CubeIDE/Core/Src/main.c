@@ -18,12 +18,12 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <exercise10.h>
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "software_timer.h"
-#include "exercise9.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,8 +101,9 @@ int main(void)
 
   clearAll();
   setTimer(0, 1000);
-  setTimer(1, 20);
+  setTimer(1, 250);
   setTimer(2, 1000);
+  setTimer(3, 10);
 
   timer_flag[1] = 1;
   timer_flag[2] = 1;
@@ -121,13 +122,7 @@ int main(void)
 		index_led++;
 		if (index_led >= 4)
 			index_led = 0;
-
-		updateLEDMatrix(index_led_matrix++);
-		if (index_led_matrix >= 8)
-			index_led_matrix = 0;
-
-
-		setTimer(1, 20);
+		setTimer(1, 250);
 	}
 
 	if (timer_flag[2] == 1)
@@ -147,6 +142,13 @@ int main(void)
 		}
 		updateClockBuffer();
 		setTimer(2, 1000);
+	}
+	if (timer_flag[3] == 1)
+	{
+		updateLEDMatrix(index_led_matrix++);
+				if (index_led_matrix >= 8)
+					index_led_matrix = 0;
+		setTimer(3, 10);
 	}
 
 

@@ -5,8 +5,8 @@
  *      Author: tuank
  */
 
-#ifndef INC_EXERCISE9_H_
-#define INC_EXERCISE9_H_
+#ifndef INC_EXERCISE10_H_
+#define INC_EXERCISE10_H_
 
 #include "main.h"
 
@@ -22,4 +22,4 @@ void displayCol(int index);
 void clearMatrix();
 void updateLEDMatrix(int index);
 
-#endif /* INC_EXERCISE9_H_ */
+#endif /* INC_EXERCISE10_H_ */
