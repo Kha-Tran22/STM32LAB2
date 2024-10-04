@@ -760,8 +760,8 @@ int main(void)
  8000610:	f44f 717a 	mov.w	r1, #1000	; 0x3e8
  8000614:	2002      	movs	r0, #2
  8000616:	f000 f96f 	bl	80008f8 <setTimer>
-  setTimer(3, 20);
- 800061a:	2114      	movs	r1, #20
+  setTimer(3, 10);
+ 800061a:	210a      	movs	r1, #10
  800061c:	2003      	movs	r0, #3
  800061e:	f000 f96b 	bl	80008f8 <setTimer>
 
@@ -909,8 +909,8 @@ int main(void)
  80006f4:	2300      	movs	r3, #0
  80006f6:	603b      	str	r3, [r7, #0]
 
-		setTimer(3, 20);
- 80006f8:	2114      	movs	r1, #20
+		setTimer(3, 10);
+ 80006f8:	210a      	movs	r1, #10
  80006fa:	2003      	movs	r0, #3
  80006fc:	f000 f8fc 	bl	80008f8 <setTimer>
 	if (timer_flag[0] == 1)

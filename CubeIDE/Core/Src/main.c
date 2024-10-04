@@ -103,7 +103,7 @@ int main(void)
   setTimer(0, 1000);
   setTimer(1, 250);
   setTimer(2, 1000);
-  setTimer(3, 20);
+  setTimer(3, 10);
 
   timer_flag[1] = 1;
   timer_flag[2] = 1;
@@ -152,7 +152,7 @@ int main(void)
 		if (index_led_matrix >= 8)
 			index_led_matrix = 0;
 
-		setTimer(3, 20);
+		setTimer(3, 10);
 	}
 
 
