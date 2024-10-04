@@ -454,7 +454,7 @@ int main(void)
   int index_led = 0;
  80003c0:	2300      	movs	r3, #0
  80003c2:	607b      	str	r3, [r7, #4]
-  hour = 15; minute = 8; second = 50;
+  hour = 15; minute = 8; second = 55;
  80003c4:	4b3a      	ldr	r3, [pc, #232]	; (80004b0 <main+0x10c>)
  80003c6:	220f      	movs	r2, #15
  80003c8:	601a      	str	r2, [r3, #0]
@@ -462,7 +462,7 @@ int main(void)
  80003cc:	2208      	movs	r2, #8
  80003ce:	601a      	str	r2, [r3, #0]
  80003d0:	4b39      	ldr	r3, [pc, #228]	; (80004b8 <main+0x114>)
- 80003d2:	2232      	movs	r2, #50	; 0x32
+ 80003d2:	2237      	movs	r2, #55	; 0x37
  80003d4:	601a      	str	r2, [r3, #0]
 
   clearAll();

@@ -99,7 +99,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int index_led = 0;
-  hour = 15; minute = 8; second = 50;
+  hour = 15; minute = 8; second = 55;
 
   clearAll();
   setTimer(0, 1000);
